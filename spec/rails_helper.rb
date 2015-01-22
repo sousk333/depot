@@ -73,4 +73,5 @@ RSpec.configure do |config|
 
   # Custom Helper
   config.include Screenshot
+  Screenshot.make_screenshot_save_directory
 end
