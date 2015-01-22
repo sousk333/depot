@@ -1,3 +1,9 @@
-OrderNotifier#shipped
+%h3 Pragmaticでのご注文商品を発送しました
+%p ご注文の商品を発送したことをお知らせいたします。
 
-= @greeting + ", find me in app/views/order_notifier/shipped.text.haml"
+%table
+  %tr
+    %th{ colspan: 2 } 数量
+    %th 説明
+
+= render @order.line_items

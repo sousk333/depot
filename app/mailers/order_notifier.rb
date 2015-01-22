@@ -1,4 +1,5 @@
-class OrderNotifier < ApplicationMailer
+class OrderNotifier < ActionMailer::Base
+  default from: 'Sam Ruby <depot@example.com>'
 
   def received(order)
     @order = order
