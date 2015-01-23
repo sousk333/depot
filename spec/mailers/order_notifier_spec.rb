@@ -18,7 +18,7 @@ RSpec.describe OrderNotifier, type: :mailer do
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("1 x #{@line_item.product.title[0, 40]}")
+      expect(mail.body.encoded).to match("1 x #{@line_item.product.title[0, 47]}")
     end
   end
 
@@ -32,7 +32,12 @@ RSpec.describe OrderNotifier, type: :mailer do
     end
 
     it "renders the body" do
-      # expect(mail.body.encoded).to match("<td>1 &times;</td>")
+      body =  mail.body.parts.select do |part|
+        part.content_type =~ /text\/html/
+      end.first.body.encoded
+
+      expect(body).to match(/1\s+&times;/)
+      expect(body).to match(@line_item.product.title[0, 47])
     end
   end
 end
