@@ -7,23 +7,20 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :users
+  scope '(:locale)' do
+    resources :users
+    resources :orders
+    resources :line_items
+    resources :carts, except: [:destroy] do
+      delete :destroy, on: :collection
+    end
 
-  resources :orders
+    resources :products do
+      get :who_bought, on: :member, defaults: { format: :atom }
+    end
 
-  resources :line_items
-
-  resources :carts, except: [:destroy] do
-    delete :destroy, on: :collection
+    root 'store#index', as: 'store'
   end
-
-  get 'store/index'
-
-  resources :products do
-    get :who_bought, on: :member, defaults: { format: :atom }
-  end
-
-  root 'store#index', as: 'store'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
