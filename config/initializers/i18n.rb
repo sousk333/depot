@@ -1,6 +1,6 @@
 I18n.default_locale = :en
 
-LANGUAGE = [
+LANGUAGES = [
   %w(English en),
   %w(Japanese ja)
 ]
