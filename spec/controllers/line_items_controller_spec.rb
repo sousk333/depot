@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe LineItemsController, type: :controller do
+  before do
+    login_as create(:user)
+  end
+
   describe 'POST create' do
     let(:product) { create(:product) }
 

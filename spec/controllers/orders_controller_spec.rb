@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe OrdersController, type: :controller do
+  before do
+    login_as create(:user)
+  end
+
   describe 'GET new' do
     it 'requires item in cart' do
       get :new
