@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe CartsController, type: :controller do
+  before do
+    login_as create(:user)
+  end
+
   describe 'DELETE destroy' do
     before do
       @cart = create(:cart)

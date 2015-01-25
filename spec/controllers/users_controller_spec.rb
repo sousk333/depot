@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
+  before do
+    login_as create(:user)
+  end
+
   describe "POST create" do
     let(:user) { attributes_for(:user) }
 

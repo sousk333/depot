@@ -72,6 +72,7 @@ RSpec.configure do |config|
   end
 
   # Custom Helper
+  config.include LoginMacros
   config.include Screenshot
   Screenshot.make_screenshot_save_directory
 end

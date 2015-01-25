@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller do
+  before do
+    login_as create(:user)
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Product. As you add validations to Product, be sure to
