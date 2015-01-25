@@ -14,12 +14,12 @@ feature "User Stories" do
     order = attributes_for(:order)
     fill_in "Name", with: order[:name]
     fill_in "Address", with: order[:address]
-    fill_in "Email", with: order[:email]
-    select "現金", from: "Pay type"
+    fill_in "E-mail", with: order[:email]
+    select "現金", from: "Pay Type"
     save_screenshot sc_path("user_stories_1.png")
 
-    click_button "注文する"
-    expect(find("#notice")).to have_content "ご注文ありがとうございます"
+    click_button "Place Order"
+    expect(find("#notice")).to have_content "Thank you for your order"
 
     mail = ActionMailer::Base.deliveries.last
     expect(mail.to).to eq [order[:email]]
