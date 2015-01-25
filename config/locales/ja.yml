@@ -1,0 +1,35 @@
+ja:
+  confirm: "本当に良いですか？"
+
+  layouts:
+    application:
+      title:      "Pragmatic Bookshelf 日本語サイト"
+      home:       "ホーム"
+      questions:  "よくある質問"
+      news:       "ニュース"
+      contact:    "お問い合わせ"
+      orders:     "注文"
+      products:   "商品"
+      users:      "ユーザ"
+      logout:     "ログアウト"
+
+  store:
+    index:
+      title_html: "Pragmatic カタログ"
+      add_html:   "カートに入れる"
+
+  carts:
+    cart:
+      title:    "カート"
+      empty:    "カートを空にする"
+      checkout: "チェックアウト"
+      total:    "合計"
+
+  number:
+    currency:
+      format:
+        unit:         "ドル"
+        precision:    2
+        separator:    "."
+        delimiter:    ","
+        format:       "%n %u"

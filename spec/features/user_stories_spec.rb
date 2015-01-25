@@ -7,9 +7,9 @@ feature "User Stories" do
 
   scenario "buying a product", js: true do
     visit store_path
-    click_button "カートに入れる"
+    click_button "Add to Cart"
     sleep 2
-    click_button "チェックアウト"
+    click_button "Checkout"
 
     order = attributes_for(:order)
     fill_in "Name", with: order[:name]

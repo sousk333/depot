@@ -1,12 +1,12 @@
-.cart_title カート
+.cart_title= t(".title")
+
 %table
   %tbody
     = render @cart.line_items
 
     %tr.total_line
-      %td{ colspan: "2" } 合計
+      %td{ colspan: "2" }= t(".total")
       %td.total_cell= number_to_currency @cart.total_price
 
-= button_to 'チェックアウト', new_order_path, method: :get
-= button_to 'カートを空にする', carts_path, method: :delete,
-  confirm: '本当によいですか？'
+= button_to t(".checkout"), new_order_path, method: :get
+= button_to t(".empty"), carts_path, method: :delete, confirm: t(:confirm)
