@@ -1,0 +1,19 @@
+.depot_form
+  - if alert
+    %p#notice= alert
+
+  = form_for @user, url: login_url do |f|
+    %fieldset
+      %legend ログインしてください
+
+      .field
+        = f.label :name, "名前:"
+        = f.text_field :name
+
+      .field
+        = f.label :password, "パスワード:"
+        = f.password_field :password
+
+      .field
+        = f.submit "ログイン"
+
